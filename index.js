@@ -52,7 +52,7 @@ module.exports = function (opts) {
         req.on('end', function () {
             parseString(data, options, function (err, xml) {
                 if (err) {
-                    err.status = 400;
+                    err.status = 422;
                     return next(err);
                 }
                 req.body = xml;
